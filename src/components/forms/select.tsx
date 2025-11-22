@@ -3,11 +3,11 @@ import { useController } from "react-hook-form";
 import type { InputHTMLAttributes } from "react";
 
 import {
-  Select as ShadcnSelect,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
+  Select as ShadcnSelect,
 } from "@/components/ui/select";
 import { Field, FieldError, FieldLabel } from "../ui/field";
 

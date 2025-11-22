@@ -40,7 +40,7 @@ export function calcVat(value: number, vat: number = 15) {
 
 /////////////////////////////////////////
 
-export function CurrenyFormatter(amount: number) {
+export function currenyFormatter(amount: number) {
   if (!amount) return "R 0.00";
 
   return new Intl.NumberFormat("en-ZA", {

@@ -1,7 +1,5 @@
 import { useProductStore } from "@/store/product-store";
-import ProductCard from "./ProductCard";
-
-// import Table from "./products/table";
+import ProductCard from "./product-card";
 
 export default function Inventory() {
   const { state } = useProductStore();

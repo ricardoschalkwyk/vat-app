@@ -1,7 +1,6 @@
 import { animate } from "motion";
-import { useMotionValue, useTransform } from "motion/react";
+import { motion, useMotionValue, useTransform } from "motion/react";
 import { useEffect } from "react";
-import { motion } from "motion/react";
 
 type Props = {
   number: number;

@@ -1,6 +1,6 @@
 import { useProductStore } from "@/store/product-store";
 import { calculateTotals } from "./lib/utils";
-import { NumberCounter } from "./NumberCounter";
+import { NumberCounter } from "./number-counter";
 
 export default function Calculations() {
   const { state } = useProductStore();

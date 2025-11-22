@@ -3,8 +3,8 @@ import { format } from "date-fns";
 import { ArrowUpDown } from "lucide-react";
 
 import type { Product } from "@/types";
-import DeleteRow from "../DeleteRow";
-import { CurrenyFormatter } from "../lib/utils";
+import DeleteRow from "../delete-row";
+import { currenyFormatter } from "../lib/utils";
 import Button from "../ui/button";
 
 // This type is used to define the shape of our data.
@@ -62,16 +62,21 @@ export const columns: ColumnDef<Product>[] = [
     cell: ({ row }) => {
       const value = parseFloat(row.getValue("priceExclVat"));
 
-      return <div className="text-center">{CurrenyFormatter(value)}</div>;
+      return <div className="text-center">{currenyFormatter(value)}</div>;
     },
   },
   {
     accessorKey: "priceInclVat",
     header: () => <div className="text-center">VAT</div>,
     cell: ({ row }) => {
-      const value = parseFloat(row.getValue("priceInclVat"));
+      const priceInclVat = parseFloat(row.getValue("priceInclVat"));
+      const priceExclVat = parseFloat(row.getValue("priceExclVat"));
 
-      return <div className="text-center">{CurrenyFormatter(value)}</div>;
+      return (
+        <div className="text-center">
+          {currenyFormatter(priceInclVat - priceExclVat)}
+        </div>
+      );
     },
   },
   {

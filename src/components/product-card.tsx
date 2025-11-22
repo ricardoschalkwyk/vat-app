@@ -2,8 +2,7 @@ import { Trash2 } from "lucide-react";
 
 import { useProductStore } from "@/store/product-store";
 import type { Product } from "@/types";
-
-import { CurrenyFormatter } from "./lib/utils";
+import { currenyFormatter } from "./lib/utils";
 import Badge from "./ui/badge";
 import Button from "./ui/button";
 
@@ -28,7 +27,7 @@ export default function ProductCard({ product }: Props) {
             <p className="font-medium text-muted-foreground">Net Value</p>
 
             <p className="flex w-full gap-1 text-2xl">
-              {CurrenyFormatter(product.priceExclVat)}
+              {currenyFormatter(product.priceExclVat)}
             </p>
           </div>
 
@@ -36,7 +35,7 @@ export default function ProductCard({ product }: Props) {
             <p className="font-medium text-muted-foreground">Vat Added</p>
 
             <p className="flex w-full gap-1 text-2xl">
-              {CurrenyFormatter(product.priceInclVat)}
+              {currenyFormatter(product.priceInclVat)}
             </p>
           </div>
 
