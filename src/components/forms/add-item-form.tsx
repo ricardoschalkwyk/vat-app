@@ -31,9 +31,9 @@ export default function AddItemForm() {
       id: 0,
       name: "",
       category: "",
-      quantity: "1",
-      priceExclVat: "0",
-      priceInclVat: "0",
+      quantity: "",
+      priceExclVat: "",
+      priceInclVat: "",
     },
   });
 
@@ -78,16 +78,16 @@ export default function AddItemForm() {
         onSubmit={onSubmit}
       >
         <div className="flex w-full flex-col justify-between gap-5 md:flex-row">
-          <Input name="name" label="Product Name" />
+          <Input name="name" label="Product Name" placeholder="Bread" />
 
-          <Input name="priceExclVat" label="Price" />
+          <Input name="priceExclVat" label="Price" placeholder="0" />
 
-          <Input name="quantity" label="Quantity" />
+          <Input name="quantity" label="Quantity" placeholder="0" />
 
           <Select
             name="category"
             label="Categories"
-            value="defaultValue"
+            defaultValue="Generic"
             options={categories}
           />
         </div>
