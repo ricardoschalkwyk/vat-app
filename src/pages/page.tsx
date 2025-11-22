@@ -12,9 +12,14 @@ import {
 import { useProductStore } from "@/store/product-store";
 import { columns } from "@/components/products/columns";
 import Calculations from "@/components/Calculations";
+import { useEffect } from "react";
 
 export default function Page() {
   const { state } = useProductStore();
+
+  useEffect(() => {
+    document.title = "Vat Calculator";
+  }, []);
 
   return (
     <div className="my-5 px-5 xl:px-0">
