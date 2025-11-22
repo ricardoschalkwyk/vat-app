@@ -28,7 +28,7 @@ export default function Page() {
               opacity: 1,
             },
           }}
-          className="mb-5 w-full space-y-5 rounded-sm border border-gray-200 p-5 shadow-sm"
+          className="mb-2.5 space-y-5"
         >
           <div className="mb-1.5 flex items-center gap-2.5">
             <h2 className="text-lg font-medium">Add a Product</h2>
@@ -46,26 +46,29 @@ export default function Page() {
                     Type the <strong>product name</strong>
                   </li>
                   <li>
-                    Pick a <strong>category</strong>
+                    Enter the <strong>price (before VAT)</strong>
                   </li>
                   <li>
                     Enter the <strong>quantity</strong>
                   </li>
                   <li>
-                    Enter the <strong>price (before VAT)</strong>
+                    Pick a <strong>category</strong>
                   </li>
                   <li>
-                    Hit <strong>Submit</strong> to add it to the calculator
+                    Hit <strong>Submit</strong> to add it to the product
+                    overview
                   </li>
                 </ol>
               </PopoverContent>
             </Popover>
           </div>
 
-          <AddItemForm />
+          <div className="overflow-hidden rounded-sm border p-5 shadow-sm">
+            <AddItemForm />
+          </div>
         </motion.div>
 
-        <div className="flex flex-col-reverse gap-5 lg:flex-row">
+        <div className="flex flex-col-reverse gap-2.5 lg:flex-row lg:gap-5">
           <motion.div
             variants={{
               hidden: { y: 20, opacity: 0 },
@@ -74,7 +77,7 @@ export default function Page() {
                 opacity: 1,
               },
             }}
-            className="mt-5 w-full"
+            className="mt-2.5 w-full"
           >
             <div className="mb-1.5 flex items-center gap-2.5">
               <h2 className="text-lg font-medium">Product Overview</h2>
@@ -99,7 +102,6 @@ export default function Page() {
             </div>
 
             <DataTable columns={columns} data={state.products} />
-            {/* <Inventory /> */}
           </motion.div>
 
           <motion.div
@@ -110,10 +112,10 @@ export default function Page() {
                 opacity: 1,
               },
             }}
-            className="h-fit w-full max-w-full space-y-5 rounded-sm border border-gray-200 p-5 shadow-sm lg:max-w-48"
+            className="mt-2.5 w-full max-w-full space-y-5 lg:max-w-48"
           >
             <div className="mb-1.5 flex items-center gap-2.5">
-              <h2 className="shrink-0 text-lg font-medium">VAT Summary</h2>
+              <h2 className="text-lg font-medium">VAT Summary</h2>
 
               <Popover>
                 <PopoverTrigger>
@@ -133,7 +135,9 @@ export default function Page() {
               </Popover>
             </div>
 
-            <Calculations />
+            <div className="overflow-hidden rounded-sm border p-5 shadow-sm">
+              <Calculations />
+            </div>
           </motion.div>
         </div>
       </MotionWrapper>

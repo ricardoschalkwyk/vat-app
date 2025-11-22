@@ -34,6 +34,7 @@ export function DataTable<TData, TValue>({
   const table = useReactTable({
     data,
     columns,
+
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
@@ -43,11 +44,16 @@ export function DataTable<TData, TValue>({
       sorting,
       rowSelection,
     },
+    initialState: {
+      pagination: {
+        pageSize: 5,
+      },
+    },
   });
 
   return (
     <div>
-      <div className="max-w-3xl overflow-hidden rounded-sm border lg:max-w-[604px] xl:max-w-[644px]">
+      <div className="overflow-hidden rounded-sm border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

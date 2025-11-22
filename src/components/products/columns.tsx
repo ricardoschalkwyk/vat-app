@@ -21,61 +21,72 @@ export const columns: ColumnDef<Product>[] = [
     accessorKey: "name",
     header: ({ column }) => {
       return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Name
-          <ArrowUpDown className="h-4 w-4" />
-        </Button>
+        <div className="text-center">
+          <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          >
+            Name
+            <ArrowUpDown className="h-4 w-4" />
+          </Button>
+        </div>
       );
+    },
+    cell: ({ row }) => {
+      return <div className="text-center">{row.getValue("name")}</div>;
     },
   },
   {
     accessorKey: "category",
-    header: () => <div className="text-right">Category</div>,
+    header: () => <div className="text-center">Category</div>,
+    cell: ({ row }) => {
+      return <div className="text-center">{row.getValue("category")}</div>;
+    },
   },
   {
     accessorKey: "priceExclVat",
     header: ({ column }) => {
       return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Price
-          <ArrowUpDown className="h-4 w-4" />
-        </Button>
+        <div className="text-center">
+          <Button
+            variant="ghost"
+            className="text-center"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          >
+            Price
+            <ArrowUpDown className="h-4 w-4" />
+          </Button>
+        </div>
       );
     },
     cell: ({ row }) => {
       const value = parseFloat(row.getValue("priceExclVat"));
 
-      return <div className="text-right">{CurrenyFormatter(value)}</div>;
+      return <div className="text-center">{CurrenyFormatter(value)}</div>;
     },
   },
   {
     accessorKey: "priceInclVat",
-    header: () => <div className="text-right">VAT</div>,
+    header: () => <div className="text-center">VAT</div>,
     cell: ({ row }) => {
       const value = parseFloat(row.getValue("priceInclVat"));
 
-      return <div className="text-right">{CurrenyFormatter(value)}</div>;
+      return <div className="text-center">{CurrenyFormatter(value)}</div>;
     },
   },
   {
     accessorKey: "quantity",
-    header: () => <div className="text-right">Quantity</div>,
+    header: () => <div className="text-center">Quantity</div>,
     cell: ({ row }) => {
       return <div className="text-center">{row.getValue("quantity")}</div>;
     },
   },
   {
     accessorKey: "createdAt",
-    header: () => <div className="text-right">Created</div>,
+    header: () => <div className="text-center">Created</div>,
     cell: ({ row }) => {
       return (
-        <div className="text-right">
+        <div className="text-center">
           {format(row.getValue("createdAt"), "dd-MM-yyyy")}
         </div>
       );
