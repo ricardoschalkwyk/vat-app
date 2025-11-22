@@ -1,73 +1,30 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + shadcn
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a vat calculator app which simply allows you to add products to a list, you enter some data into the given fields and it will then display the product in a table, you will then see what the VAT is of that product and then in a summary block you will see the total values of your inventory of products you have created.
 
-Currently, two official plugins are available:
+Currently, this app uses these libraries and frameworks:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Core functionality
 
-## React Compiler
+- [Vite](https://vite.dev/)
+- [React](https://react.dev/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Shadcn](https://ui.shadcn.com/)
+- [@tanstack/react-table](https://tanstack.com/table/latest)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Styling & animation
 
-## Expanding the ESLint configuration
+- [Tailwindcss](https://tailwindcss.com/)
+- [Shadcn](https://ui.shadcn.com/)
+- [Motion.dev](https://motion.dev/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Form handling & validation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [React Hook Form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Other notable packages:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- [Lucide Icons](lucide-react)
+- [Date-fns](https://date-fns.org/)
+- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge)
