@@ -1,18 +1,17 @@
-import { InfoIcon } from "lucide-react";
 import { motion } from "motion/react";
+import { InfoIcon } from "lucide-react";
 
-import Calculations from "@/components/Calculations";
 import AddItemForm from "@/components/forms/add-item-form";
-import MotionWrapper from "@/components/MotionWrapper";
+import MotionWrapper from "@/components/motion-wrapper";
+import { DataTable } from "@/components/products/data-table";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-
-import { columns } from "@/components/products/columns";
-import { DataTable } from "@/components/products/data-table";
 import { useProductStore } from "@/store/product-store";
+import { columns } from "@/components/products/columns";
+import Calculations from "@/components/Calculations";
 
 export default function Page() {
   const { state } = useProductStore();

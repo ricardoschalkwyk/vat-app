@@ -5,6 +5,7 @@ import {
   useMemo,
   useReducer,
 } from "react";
+
 import type { Product } from "../types";
 
 type StoreState = {
@@ -32,20 +33,6 @@ const StoreContext = createContext<StoreContextType | undefined>(undefined);
 function storeReducer(state: StoreState, action: StoreAction): StoreState {
   switch (action.type) {
     case "ADD_PRODUCT": {
-      const product = action.payload as Product;
-      let newList;
-
-      if (state.products) {
-        newList = [...state.products, product];
-      }
-
-      return {
-        ...state,
-        products: newList ? newList : state.products,
-      };
-    }
-
-    case "UPDATE_PRODUCT": {
       const product = action.payload as Product;
       let newList;
 
