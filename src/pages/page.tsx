@@ -127,7 +127,7 @@ export default function Page() {
 
                   <ol className="mt-1.5 list-disc px-3.5">
                     <li>Net Amount – total before VAT</li>
-                    <li>VAT – total VAT added</li>
+                    <li>VAT – (%15) of Net Amount</li>
                     <li>Gross Amount – final total including VAT</li>
                   </ol>
                 </PopoverContent>
