@@ -92,7 +92,7 @@ export const columns: ColumnDef<Product>[] = [
     cell: ({ row }) => {
       return (
         <div className="text-center">
-          {format(row.getValue("createdAt"), "dd-MM-yyyy")}
+          {format(row.getValue("createdAt"), "MM/dd/yyyy")}
         </div>
       );
     },

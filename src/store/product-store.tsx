@@ -13,7 +13,7 @@ type StoreState = {
 };
 
 type StoreAction = {
-  type: "UPDATE_PRODUCT" | "ADD_PRODUCT" | "REMOVE_PRODUCT";
+  type: "ADD_PRODUCT" | "REMOVE_PRODUCT";
   payload?: unknown;
 };
 
